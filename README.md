@@ -33,7 +33,13 @@ MAML의 알고리즘(outer, inner loop)을 구현한 Model 구조 Class
 + 여러 Amplitude와 Phase를 가지는 Sine-Wave의 좌표를 파악하는 Task
 + 즉, MAML를 통해 Sine-Wave의 본질적인 특성을 파악할 수 있는지에 대한 문제
 ##### Result
-pass
++ **5-shot**
+  + ![sinewave(5-shot)](https://user-images.githubusercontent.com/28241676/172082289-5840c378-fe8f-4e0f-bc76-ea0b365bb687.png)
+  + 10000번의 Pre-Trained Model보다 빠른 적응과 높은 일반화를 보임
++ **10-shot**
+  + ![sinewave(10-shot)](https://user-images.githubusercontent.com/28241676/172082292-b52c53b6-2a28-4d67-9cfb-1dd7ece84282.png)
+  + 10개의 Sample(Few shot) 만으로도 Random한 Sine-Wave의 본질적인 특징을 잘 이해하고 있음
+  + 이에 반해 Pre-Trained Model은 단순히 좌표의 모양만 따라가는 단순한 모습을 보임
 
 ### Classification
 #### Omniglot
@@ -77,8 +83,8 @@ pass
 + [train/val/test csv](https://github.com/twitter-research/meta-learning-lstm/tree/master/data/miniImagenet)
 + ![image](https://user-images.githubusercontent.com/28241676/172053722-54cb5d62-cea7-441a-bb30-ed31b2eef2d3.png)
 + 100개의 Classes, 600개의 Examples, 84x84 RGB Images
-+ Dataset Code : `./mydataset/stanforddogs.py`
-  + > ./stanforddogs/ : root<br>
++ Dataset Code : `./mydataset/miniimagenet.py`
+    + > ./miniimagenet/ : root<br>
   ____|- images/\*.png : All images <br>
   ____|- mini-imagesnet.zip : images zip file <br>
   ____|- train.csv <br>
@@ -108,8 +114,8 @@ pass
 + [Download Link](http://vision.stanford.edu/aditya86/ImageNetDogs/main.html)
 + ![image](https://user-images.githubusercontent.com/28241676/172054758-c1891acf-f64f-430a-82bb-063c340fdaab.png)
 + 120개의 Classes, 20580개의 images
-+ Dataset Code : `./mydataset/miniimagenet.py`
-    + > ./miniimagenet/ : root<br>
++ Dataset Code : `./mydataset/stanforddogs.py`
+  + > ./stanforddogs/ : root<br>
     ____|- images/\*.png : All images <br>
     ____|- Source/\* : Source data <br>
     ____|- label.csv : label & tag <br>
@@ -139,3 +145,11 @@ pass
   + [Reference Paper 2](https://github.com/WenbinLee/CovaMNet) : CovaMNet
   + ![stanforddogs_performence_table](https://user-images.githubusercontent.com/28241676/172055594-73978042-e09f-4c78-b5fb-a57e339c45a0.png)
   
+
+## Conclusion
++ MAML은 적은 데이터(Few Shot)로도 빠른 적응(Fast Adaptaion)과 높은 일반화(High Generalization) 능력을 보인다.
++ Supervised-Learning 분야에서 MAML의 성능을 확인할 수 있었다.
+  + Regression, Classification
++ 논문에서 제시한 성능보다 해당 프로젝트의 성능이 낮은것은 Deep-Layers의 구조 차이때문으로 파악한다.
++ MAML을 모듈화하여 비슷한 TASK에 적용할 수 있도록 해야겟다.
++ 나의 관심 분야인 NLP에 적용할 수 있도록 관련 연구/자료를 조사하해야겠다.
