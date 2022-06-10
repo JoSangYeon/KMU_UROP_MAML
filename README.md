@@ -141,9 +141,8 @@ MAML의 알고리즘(outer, inner loop)을 구현한 Model 구조 Class
 
 + Performence Table
   + [Reference Paper 1](http://cs230.stanford.edu/projects_winter_2019/reports/15762310.pdf) : Datasets
-    + ![image](https://user-images.githubusercontent.com/28241676/172055033-4932c19d-63ac-414a-8c67-876aaae60c82.png)
   + [Reference Paper 2](https://github.com/WenbinLee/CovaMNet) : CovaMNet
-  + ![stanforddogs_performence_table](https://user-images.githubusercontent.com/28241676/172055594-73978042-e09f-4c78-b5fb-a57e339c45a0.png)
+  + ![image](https://user-images.githubusercontent.com/28241676/173072188-74602289-5e19-4c74-afce-2252600f3d59.png)
   
 
 ## Conclusion
